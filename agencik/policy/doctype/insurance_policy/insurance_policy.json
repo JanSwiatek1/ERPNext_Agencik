@@ -106,7 +106,7 @@
    "label": "home"
   },
   {
-   "depends_on": "eval:doc.type_policy == \"Transport\";",
+   "depends_on": "eval:doc.typ_polisy=='Transport';",
    "fieldname": "transport_section",
    "fieldtype": "Column Break",
    "label": "transport"
@@ -160,7 +160,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-30 10:33:11.694323",
+ "modified": "2025-10-06 15:15:50.154032",
  "modified_by": "Administrator",
  "module": "Policy",
  "name": "Insurance Policy",
