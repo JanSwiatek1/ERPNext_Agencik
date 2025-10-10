@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Assurance Policy\"}}]",
+ "content": "[{\"id\":\"-fmeUfWes_\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Assurance Policy</span>\",\"col\":12}},{\"id\":\"Og2YGyKylR\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customer\",\"col\":3}},{\"id\":\"yL89oY2MUR\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Vehicle Insurance\",\"col\":3}},{\"id\":\"t8qaXaUIWZ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Person\",\"col\":3}},{\"id\":\"b8IBBJSb-L\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"LhMspt1hh1\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Insurance Policy\",\"col\":4}},{\"id\":\"_Rme908kYY\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Employee\",\"col\":4}},{\"id\":\"lA-zDyeN7p\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Sales Person\",\"col\":4}},{\"id\":\"QusvGUvp2j\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"User\",\"col\":4}}]",
  "creation": "2025-09-15 17:00:00.712616",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,17 +13,63 @@
  "is_hidden": 0,
  "label": "Assurance Policy",
  "links": [],
- "modified": "2025-09-15 17:01:38.161858",
- "modified_by": "Administrator",
+ "modified": "2025-10-09 15:42:32.898032",
+ "modified_by": "jan@erptech.com",
  "module": "Agencik",
  "name": "Assurance Policy",
  "number_cards": [],
  "owner": "Administrator",
  "parent_page": "",
  "public": 1,
- "quick_lists": [],
+ "quick_lists": [
+  {
+   "document_type": "Insurance Policy",
+   "label": "Insurance Policy",
+   "quick_list_filter": "[]"
+  },
+  {
+   "document_type": "User",
+   "label": "User",
+   "quick_list_filter": "[]"
+  },
+  {
+   "document_type": "Sales Person",
+   "label": "Sales Person",
+   "quick_list_filter": "[]"
+  },
+  {
+   "document_type": "Employee",
+   "label": "Employee",
+   "quick_list_filter": "[]"
+  }
+ ],
  "roles": [],
  "sequence_id": 1.0,
- "shortcuts": [],
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Customer",
+   "link_to": "Customer",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Sales Person",
+   "link_to": "Sales Person",
+   "stats_filter": "[[\"Sales Person\",\"sales_person_name\",\"like\",\"%Grupa Agencik%\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Vehicle Insurance",
+   "link_to": "Vehicle Insurance",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
  "title": "Assurance Policy"
 }

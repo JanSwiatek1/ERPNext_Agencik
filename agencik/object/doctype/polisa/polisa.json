@@ -5,62 +5,58 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "typ_polisy",
-  "szczeg\u00f3\u0142y_komunikacyjne_section",
+  "type_type_policy",
+  "type_polisy",
+  "szczegoly_komunikacyjne_section",
   "szczegoly_komunikacyjna",
-  "szczeg\u00f3\u0142y_mieszkaniowe_section",
-  "szczegoly_mieszkaniowa",
-  "amended_from"
+  "szczegoly_mieszkaniowe_section",
+  "szczegoly_mieszkaniowa"
  ],
  "fields": [
   {
-   "fieldname": "typ_polisy",
-   "fieldtype": "Select",
-   "label": "Typ Polisy",
-   "options": "Komunikacyjna\nMieszkaniowa",
-   "read_only": 1,
-   "read_only_depends_on": "eval:!doc.__islocal;"
-  },
-  {
    "fieldname": "szczegoly_mieszkaniowa",
    "fieldtype": "Link",
-   "label": "Mieszkaniowa",
+   "label": "Polisa mieszkaniowa",
    "options": "Polisa Mieszkaniowa"
   },
   {
-   "columns": 2,
    "fieldname": "szczegoly_komunikacyjna",
    "fieldtype": "Link",
-   "label": "Komunikacyjna",
+   "label": "Polisa komunikacyjna",
    "options": "Polisa Komunikacyjna"
   },
   {
-   "depends_on": "eval:doc.typ_polisy=='Komunikacyjna';",
-   "fieldname": "szczeg\u00f3\u0142y_komunikacyjne_section",
+   "fieldname": "type_polisy",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Type polisy",
+   "options": "Komunikacyjna\nMieszkaniowa",
+   "reqd": 1
+  },
+  {
+   "fieldname": "type_type_policy",
+   "fieldtype": "Column Break",
+   "label": "type"
+  },
+  {
+   "depends_on": "doc.typ_polisy=='Komunikacyjna';",
+   "fieldname": "szczegoly_komunikacyjne_section",
    "fieldtype": "Section Break",
    "label": "Szczeg\u00f3\u0142y Komunikacyjne"
   },
   {
-   "fieldname": "szczeg\u00f3\u0142y_mieszkaniowe_section",
+   "depends_on": "doc.typ_polisy=='Mieszkaniowa';",
+   "fieldname": "szczegoly_mieszkaniowe_section",
    "fieldtype": "Section Break",
    "label": "Szczeg\u00f3\u0142y Mieszkaniowe"
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Polisa",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2025-10-06 15:58:02.756834",
- "modified_by": "Administrator",
+ "modified": "2025-10-08 11:12:42.751181",
+ "modified_by": "jan@erptech.com",
  "module": "Object",
  "name": "Polisa",
  "owner": "Administrator",

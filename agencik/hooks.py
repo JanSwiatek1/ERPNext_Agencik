@@ -5,6 +5,39 @@ app_description = "app"
 app_email = "swiatek-jan@wp.pl"
 app_license = "mit"
 
+# def before_insert(doc, method):
+#     if doc.doctype == "add_creater_policy":
+#         doc.user = frappe.session.user
+
+doc_events = {
+    "Sales Person": {
+        "validate": "agencik.overrides.sales_person_controller.validate_item"
+    }
+} 
+
+
+doc_events = {
+    "Sales Person": {
+        "before_insert": "agencik.overrides.add_creater_policy.before_insert",
+        "before_save": "agencik.overrides.add_creater_policy.before_save",
+        "set_current_user": "agencik.overrides.add_creater_policy.set_current_user"
+    }
+}
+# doc_events = {
+#     "Insurance Policy": {
+#         # "validate": "agencik.overrides.sales_person_controller.before_insert",
+#         "validate": "agencik.overrides.add_creater_policy.SalesPersonController"
+#     }
+# } 
+
+
+# doc_events = {
+# 	"*": {
+# 		"on_update": "agencik.overrides.sales_person_controller.printWord",
+# 		"on_cancel": "method",
+# 		"on_trash": "method"
+# 	}
+# }
 # Apps
 # ------------------
 

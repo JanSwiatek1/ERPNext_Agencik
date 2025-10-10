@@ -15,6 +15,8 @@
   "premium",
   "reminder",
   "client",
+  "agent",
+  "employee",
   "transport_section",
   "vehicle",
   "insurancee_components",
@@ -25,7 +27,8 @@
   "insurance_period",
   "commission",
   "insurance_premium",
-  "notes"
+  "notes",
+  "komunikacyjna_tab"
  ],
  "fields": [
   {
@@ -155,13 +158,30 @@
    "label": "Insurancee components",
    "options": "Insurance1",
    "sort_options": 1
+  },
+  {
+   "fieldname": "komunikacyjna_tab",
+   "fieldtype": "Tab Break",
+   "label": "komunikacyjna"
+  },
+  {
+   "fieldname": "agent",
+   "fieldtype": "Link",
+   "label": "Agent",
+   "options": "Sales Person"
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-06 15:15:50.154032",
- "modified_by": "Administrator",
+ "modified": "2025-10-09 13:57:57.042279",
+ "modified_by": "jan@erptech.com",
  "module": "Policy",
  "name": "Insurance Policy",
  "naming_rule": "By fieldname",

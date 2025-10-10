@@ -48,3 +48,20 @@ class InsurancePolicy(Document):
             'commission': self.commission_vehicle,
             'components_count': len(self.insurancee_components) if self.insurancee_components else 0
         }
+
+
+# class InsurancePolicy(Document):
+#     def before_save(self):
+#         if not self.agent:
+#             self.set_agent_from_user()
+    
+#     def set_agent_from_user(self):
+#         # Pobierz employee dla obecnego użytkownika
+#         employee = frappe.db.get_value("Employee", {"user_id": frappe.session.user}, "name")
+        
+#         if employee:
+#             # Pobierz sales person z employee
+#             sales_person = frappe.db.get_value("Employee", employee, "sales_person")
+            
+#             if sales_person:
+#                 self.agent = sales_person

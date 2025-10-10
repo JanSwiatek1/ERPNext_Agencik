@@ -1,0 +1,57 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"eWptDrM7kf\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Insurance</span>\",\"col\":12}},{\"id\":\"vx8cVtn_hP\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customer\",\"col\":3}},{\"id\":\"LNY67Elmwy\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Vehicle Insurance\",\"col\":3}},{\"id\":\"Q3d2gjMff-\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Item\",\"col\":3}},{\"id\":\"BVFz8Mx68L\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"-LW5ONYZEl\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Insurance Policy\",\"col\":4}}]",
+ "creation": "2025-10-07 10:21:35.429880",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Insurance",
+ "links": [],
+ "modified": "2025-10-07 13:23:50.486622",
+ "modified_by": "jan@erptech.com",
+ "module": "Policy",
+ "name": "Insurance",
+ "number_cards": [],
+ "owner": "jan@erptech.com",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [
+  {
+   "document_type": "Insurance Policy",
+   "label": "Insurance Policy",
+   "quick_list_filter": "[]"
+  }
+ ],
+ "roles": [],
+ "sequence_id": 28.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Vehicle Insurance",
+   "link_to": "Vehicle Insurance",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Customer",
+   "link_to": "Customer",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Item",
+   "link_to": "Item",
+   "type": "DocType"
+  }
+ ],
+ "title": "Insurance"
+}
