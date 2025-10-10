@@ -9,18 +9,14 @@ app_license = "mit"
 #     if doc.doctype == "add_creater_policy":
 #         doc.user = frappe.session.user
 
-doc_events = {
-    "Sales Person": {
-        "validate": "agencik.overrides.sales_person_controller.validate_item"
-    }
-} 
 
 
 doc_events = {
     "Sales Person": {
         "before_insert": "agencik.overrides.add_creater_policy.before_insert",
         "before_save": "agencik.overrides.add_creater_policy.before_save",
-        "set_current_user": "agencik.overrides.add_creater_policy.set_current_user"
+        "set_current_user": "agencik.overrides.add_creater_policy.set_current_user",
+        "validate": "agencik.overrides.sales_person_controller.validate_item"
     }
 }
 # doc_events = {
