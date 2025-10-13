@@ -6,6 +6,9 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "send_tab",
+  "policy_fille",
+  "details_tab",
   "section_break_oput",
   "type_policy",
   "policy_number",
@@ -15,8 +18,7 @@
   "premium",
   "reminder",
   "client",
-  "agent",
-  "employee",
+  "user",
   "transport_section",
   "vehicle",
   "insurancee_components",
@@ -137,7 +139,7 @@
    "fieldname": "insurance_value",
    "fieldtype": "Data",
    "label": "Insurance value",
-   "options": "Insurance2"
+   "options": "Company List"
   },
   {
    "depends_on": "eval:doc.type_policy == \"Transport\";",
@@ -156,7 +158,7 @@
    "fieldname": "insurancee_components",
    "fieldtype": "Table MultiSelect",
    "label": "Insurancee components",
-   "options": "Insurance1",
+   "options": "Insurance Module",
    "sort_options": 1
   },
   {
@@ -165,23 +167,32 @@
    "label": "komunikacyjna"
   },
   {
-   "fieldname": "agent",
-   "fieldtype": "Link",
-   "label": "Agent",
-   "options": "Sales Person"
+   "fieldname": "policy_fille",
+   "fieldtype": "Attach",
+   "label": "Policy Fille"
   },
   {
-   "fieldname": "employee",
+   "fieldname": "details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "send_tab",
+   "fieldtype": "Tab Break",
+   "label": "Send"
+  },
+  {
+   "fieldname": "user",
    "fieldtype": "Link",
-   "label": "Employee",
-   "options": "Employee"
+   "label": "User",
+   "options": "User"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-09 13:57:57.042279",
- "modified_by": "jan@erptech.com",
+ "modified": "2025-10-13 09:38:57.982660",
+ "modified_by": "Administrator",
  "module": "Policy",
  "name": "Insurance Policy",
  "naming_rule": "By fieldname",

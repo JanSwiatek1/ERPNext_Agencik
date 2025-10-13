@@ -10,6 +10,22 @@ frappe.ui.form.on('Insurance Policy', {
 
     insurancee_components_remove: function (frm) {
         calculateCommission(frm);
+    },
+
+
+
+    onload: function (frm) {
+        // Ustaw coverage_end na podstawie coverage_start przy ładowaniu formularza
+        if (frm.doc.coverage_start && !frm.doc.coverage_end) {
+            setCoverageEnd(frm);
+        }
+    },
+
+    coverage_start: function (frm) {
+        // Ustaw coverage_end przy zmianie coverage_start
+        if (frm.doc.coverage_start) {
+            setCoverageEnd(frm);
+        }
     }
 });
 
@@ -40,4 +56,21 @@ function calculateCommission(frm) {
         console.error('Error calculating commission:', err);
         frappe.msgprint(__('Error calculating commission. Please try again.'));
     });
+
+
+
+
+}
+
+
+
+
+
+
+function setCoverageEnd(frm) {
+    let startDate = frappe.datetime.str_to_obj(frm.doc.coverage_start);
+    let endDate = new Date(startDate);
+    endDate.setFullYear(endDate.getFullYear() + 1);
+
+    frm.set_value('coverage_end', frappe.datetime.obj_to_str(endDate));
 }

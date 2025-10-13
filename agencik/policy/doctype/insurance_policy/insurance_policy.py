@@ -1,8 +1,30 @@
 import frappe
 from frappe.model.document import Document
 from frappe.utils import add_years
+from frappe import _
 
 class InsurancePolicy(Document):
+
+
+
+
+    def length_company(doc, method):
+        if doc.insurance_company == "Allianz":
+            if len(doc.policy_number) != 10:
+                frappe.throw(_("For Allianz the policy number must be exactly 10 characters long"))
+        
+        elif doc.insurance_company == "Warta":
+            if len(doc.policy_number) != 15:
+                frappe.throw(_("For Warta the policy number must be exactly 15 characters long"))
+        
+        elif doc.insurance_company == "Proama":
+            if len(doc.policy_number) != 11:
+                frappe.throw(_("for Proama the policy number must be exactly 11 characters long"))
+
+
+
+
+
     def validate(self):
         """Automatycznie ustaw coverage_end na podstawie coverage_start"""
         if self.coverage_start:
@@ -34,7 +56,7 @@ class InsurancePolicy(Document):
         commission_rate = 0.10  # 10%
 
         for component in self.insurancee_components:
-            component_name = component.insurance2
+            component_name = component.company_list
             total_premium += premium_values.get(component_name, 500)
 
         self.commission_vehicle = total_premium * commission_rate
@@ -48,20 +70,21 @@ class InsurancePolicy(Document):
             'commission': self.commission_vehicle,
             'components_count': len(self.insurancee_components) if self.insurancee_components else 0
         }
-
-
-# class InsurancePolicy(Document):
-#     def before_save(self):
-#         if not self.agent:
-#             self.set_agent_from_user()
     
-#     def set_agent_from_user(self):
-#         # Pobierz employee dla obecnego użytkownika
-#         employee = frappe.db.get_value("Employee", {"user_id": frappe.session.user}, "name")
+
+
+
+
+    # def length_company(doc, method):
+    #     # Słownik z firmami i wymaganymi długościami
+    #     company_lengths = {
+    #         "Allianz": 10,
+    #         "Warta": 15,
+    #         "Proama": 11
+    #     }
         
-#         if employee:
-#             # Pobierz sales person z employee
-#             sales_person = frappe.db.get_value("Employee", employee, "sales_person")
-            
-#             if sales_person:
-#                 self.agent = sales_person
+    #     if doc.insurance_company in company_lengths:
+    #         required_length = company_lengths[doc.insurance_company]
+    #         if len(doc.policy_number) != required_length:
+    #             frappe.throw(_(f"Dla {doc.insurance_company} numer polisy musi mieć dokładnie {required_length} znaków"))
+
